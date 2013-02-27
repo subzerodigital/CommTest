@@ -14,19 +14,21 @@
 	//options
 	var defaults = {};
 	//constructor
-	var StarProfile = function($el,options){
+	var ProfileBrowser = function($el,options){
 		//init properties 
 		this.$el = $el;	
 		this.$nav = $el.find(".nav");
+		this.$content = $el.find(".content");
 		this.$navTemplate = null;
-		this.$bodyTemplate = null;
+		this.$contentTemplate = null;
 		//init plugin
 		this.init();
 	};
 	
-	StarProfile.prototype = {
+	ProfileBrowser.prototype = {
 		init:function(){
 			this.$navTemplate = $("#navTemp");
+			this.$contentTemplate = $("#contentTemp");
 			this.fetchData();
 		},
 		fetchData:function(){
@@ -51,6 +53,7 @@
 			//render the navigation
 			this.$nav.html(_.template(self.$navTemplate.html(),{items:data.data}));
 			//render the page body
+			this.$content.html(_.template(self.$contentTemplate.html(),{items:data.data}));
 		},
 		binding:function(){
 			
@@ -58,9 +61,9 @@
 	};
 	
 	//register plug-in to jQuery and bind to to data for debugging
-	$.fn.starProfile = function(options){
+	$.fn.profileBrowser = function(options){
 		return this.each(function(){
-			$(this).data("starProfile",new StarProfile($(this),options));
+			$(this).data("profileBrowser",new ProfileBrowser($(this),options));
 		});
 	};
 		

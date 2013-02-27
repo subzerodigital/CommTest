@@ -12,27 +12,31 @@
 
 <body>
 	<div class="bodyWrapper">
-		<div class="fn-starProfile">
+		<div class="fn-profileBrowser">
 			<ul class="nav">
 				<!-- navigation will be populated via underscore template engine -->
 			</ul>
-			<div class="contents">
+			<div class="content">
 				<!-- content will be populated  -->
 			</div>
 		</div>
 	</div>
 	
-	<!-- template to render the nav -->
+	<!-- template to render the navigation -->
 	<script type="text/html" id='navTemp'>
         <% _.each(items,function(item){ %>
             <li><%= item.firstName %> <%= item.lastName %></li>
         <% }); %>	
 	</script>
 	
-	
-	<!-- template to render the page body-->
-	<script type="text/html" id='bodyTemp'>
-        
+	<!-- template to render the page content-->
+	<script type="text/html" id='contentTemp'>
+        <% _.each(items,function(item){ %>
+            <div class='profile'>
+				<h2><%= item.firstName %> <%= item.lastName %></h2>
+				<p><%- item.bio %></p>
+			</div>
+        <% }); %>
 	</script>
 	
 	<!-- jQuery -->
@@ -40,8 +44,9 @@
 	<!-- vendor -->
 	<script type="text/javascript" src="js/lib/vendor/underscore.js"></script>	
 	<!-- native lib -->
-	<script type="text/javascript" src="js/lib/starProfile.js"></script>
+	<script type="text/javascript" src="js/lib/profileBrowser.js"></script>
 	<!-- app init -->
 	<script type="text/javascript" src="js/appInit.js"></script>
+	
 </body>
 </html>
