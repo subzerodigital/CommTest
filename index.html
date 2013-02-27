@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="en" />
+    <meta name="viewport" content="width=device-width user-scalable=no" />
+    <title>STAR PROFILE</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+
+<body>
+	<div class="bodyWrapper">
+		<div class="fn-starProfile">
+			<ul class="nav">
+			</ul>
+		</div>
+	</div>
+	
+	<script type="text/html" id='navTemp'>
+        <% _.each(items,function(item){ %>
+            <li><%= item.firstName %> <%= item.lastName %></li>
+        <% }); %>	
+	</script>
+	
+	
+	<!-- template to render the nav -->
+	<script type="text/html" id='navTemp_'>
+        <ul><li>haha</li></ul>	
+	</script>
+	
+	<!-- jQuery -->
+	<script type="text/javascript" src="js/lib/vendor/jquery-1.9.0.js"></script>
+	<!-- vendor -->
+	<script type="text/javascript" src="js/lib/vendor/underscore.js"></script>	
+	<!-- native lib -->
+	<script type="text/javascript" src="js/lib/starProfile.js"></script>
+	<!-- app init -->
+	<script type="text/javascript" src="js/appInit.js"></script>
+</body>
+</html>
