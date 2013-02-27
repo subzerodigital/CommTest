@@ -1,3 +1,3 @@
 $(function(){
-	$(".fn-profileBrowser").profileBrowser();s
+	$(".fn-profileBrowser").profileBrowser();
 });

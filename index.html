@@ -11,36 +11,43 @@
 </head>
 
 <body>
-	<div class="bodyWrapper">
-		<div class="fn-profileBrowser">
+	<div class="bodyWrapper fn-profileBrowser">
+            <h1>Profile Browser</h1>
+
 			<ul class="nav">
 				<!-- navigation will be populated via underscore template engine -->
 			</ul>
 			<div class="content">
 				<!-- content will be populated  -->
 			</div>
-		</div>
+
 	</div>
 	
 	<!-- template to render the navigation -->
 	<script type="text/html" id='navTemp'>
         <% _.each(items,function(item){ %>
-            <li><%= item.firstName %> <%= item.lastName %></li>
+            <li><a href="#"><%= item.firstName %> <%= item.lastName %></a></li>
         <% }); %>	
 	</script>
 	
 	<!-- template to render the page content-->
 	<script type="text/html" id='contentTemp'>
         <% _.each(items,function(item){ %>
+            <div class="profileLabel"><h2><%= item.firstName %> <%= item.lastName %></h2></div>
             <div class='profile'>
-				<h2><%= item.firstName %> <%= item.lastName %></h2>
-				<p><%- item.bio %></p>
+                <h3><%= item.firstName %> <%= item.lastName %></h3>
+                <div class="detail">
+                    <img src="<%= item.picture %>" alt="<%= item.firstName %> <%= item.lastName %>" />
+                    <p><%- item.bio %></p>
+                </div>
 			</div>
         <% }); %>
 	</script>
 	
 	<!-- jQuery -->
 	<script type="text/javascript" src="js/lib/vendor/jquery-1.9.0.js"></script>
+    <!--include mockData: Chrome doesn't allow ajax call to local file system, so I have to include the data here - in case ajax call fails-->
+    <script type="text/javascript" src="data/data.js"></script>
 	<!-- vendor -->
 	<script type="text/javascript" src="js/lib/vendor/underscore.js"></script>	
 	<!-- native lib -->

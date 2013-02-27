@@ -42,7 +42,8 @@
 					self.renderHtml(resp);
 				},
 				error:function(){
-					
+					//if ajax is failed, we have to load data from javascript
+                    self.renderHtml(data);
 				}
 			}).done(function() {
 				//console.log("success")
@@ -54,9 +55,30 @@
 			this.$nav.html(_.template(self.$navTemplate.html(),{items:data.data}));
 			//render the page body
 			this.$content.html(_.template(self.$contentTemplate.html(),{items:data.data}));
+            //binding
+            this.binding();
 		},
 		binding:function(){
-			
+            //bind click for desk top
+            var self = this;
+			this.$nav.find("li").click(function(evt){
+                evt.preventDefault();
+                var index = $(this).index();
+                var profiles = self.$content.find(".profile");
+                var target = profiles.eq(index);
+                profiles.hide();
+                profiles.eq(index).fadeIn(200);
+            });
+            //bind click for mobile
+            this.$content.find(".profileLabel").click(function(evt){
+                evt.preventDefault();
+                self.$content.find(".profile").slideUp(200);
+
+                $(this).next(".profile").slideDown(200);
+            })
+
+            //kick off the app
+            this.$nav.find("li:first").trigger("click");
 		}
 	};
 	

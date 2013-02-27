@@ -1,0 +1,75 @@
+.bodyWrapper{
+    width: 740px;
+    margin:0 auto;
+    overflow: hidden;
+
+    h1{
+      margin: 30px 0 50px 0;
+      text-align: center;
+      clear: both;
+    }
+
+    .content{
+       float: left;
+       width: 60%;
+       min-height: 400px;
+       border-left: 1px solid $grey;
+       padding-left: 20px;
+
+       .profile{
+         overflow: hidden;
+
+         img{
+            float:left;
+            margin: 0 20px 20px 0;
+          }
+
+       }
+
+        .profileLabel{
+          display: none;
+        }
+    }
+}
+
+
+
+@media all and (max-width: $breakingPoint) {
+
+  .bodyWrapper{
+    width:100%;
+    margin: 0;
+
+    .content {
+      float: none;
+      width: 100%;
+      border-left: none;
+      padding:0px;
+
+
+      .profileLabel{
+        display: block;
+        h2{
+          @include gradient($navBtnTop,$navBtnBottom);
+          border-top:1px solid $grey;
+          font-size:1.6em;
+          font-weight: normal;
+          padding:8px 15px;
+        }
+      }
+
+      .profile{
+
+
+        .detail{
+          img{
+            float:none;
+          }
+        }
+      }
+    }
+
+
+  }
+
+}

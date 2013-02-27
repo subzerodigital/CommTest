@@ -1,0 +1,29 @@
+.nav{
+
+    float:left;
+    width: 25%;
+    border:1px solid $grey;
+    border-right: none;
+    @include rounded(10px,0, 0, 10px);
+    overflow: hidden;
+
+    li {
+        @include gradient($navBtnTop,$navBtnBottom);
+        border-bottom: 1px solid $grey;
+
+        a {
+          display: block;
+          padding:3px 15px;
+        }
+        &:last-child{
+            border-bottom: none;
+        }
+    }
+}
+
+
+@media all and (max-width: $breakingPoint) {
+  .nav{
+    display: none;
+  }
+}

@@ -1,0 +1,17 @@
+@mixin gradient($first, $second) {
+  background-color: $second;
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#{ie-hex-str($first)}', endColorstr='#{ie-hex-str($second)}');";
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#{ie-hex-str($first)}', endColorstr='#{ie-hex-str($second)}');;
+  zoom: 1;
+  background: -webkit-gradient(linear, left top, left bottom, from($first), to($second));
+  background: -moz-linear-gradient(top,  $first,  $second);
+  background: -o-linear-gradient($first, $second);
+  background: linear-gradient($first, $second);
+}
+
+
+@mixin rounded($tl, $tr, $br, $bl) {
+    border-radius: $tl $tr $br $bl;
+    -moz-border-radius: $tl $tr $br $bl;
+    -webkit-border-radius: $tl $tr $br $bl;
+}
