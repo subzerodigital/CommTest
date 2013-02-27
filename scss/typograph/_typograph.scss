@@ -1,0 +1,41 @@
+$baseFontFamily: Arial, Helvetica, sans-serif;
+$altFontFamily: "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Tahoma, sans-serif;
+$monoFontFamily: Menlo, Monaco, "Courier New", monospace;
+
+$baseFontSize: 1.2em;
+$baseLineHeight: 1.5em;
+
+h1,h2,h3,h4,h5,h6,p,span,strong,a,ul,li,div{
+	font-family: $baseFontFamily;
+	font-weight:normal;
+}
+
+h1{
+	font-size:3em;
+}
+
+h2 {
+	font-size:2.215em;
+	font-weight:bold;
+	padding-bottom:15px;
+}
+
+h3{
+	font-size: $baseFontSize;
+	font-weight:bold;
+}
+
+h4{
+
+}
+
+a,p,ul,li{
+	font-size:$baseFontSize;
+	line-height:$baseLineHeight;
+}
+
+a:link,a:visited,a:active{
+	color:$black;
+	text-decoration:none;
+	font-weight:normal;
+}
