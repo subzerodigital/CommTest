@@ -54,3 +54,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+@media all and (max-width: $breakingPoint) {
+  html {
+    -webkit-text-size-adjust: none;
+  }
+}
