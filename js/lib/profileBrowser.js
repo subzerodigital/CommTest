@@ -15,20 +15,24 @@
 	var defaults = {};
 	//constructor
 	var ProfileBrowser = function($el,options){
-		//init properties 
+		//init memeber properties 
 		this.$el = $el;	
 		this.$nav = $el.find(".nav");
+		this.$navBtns = null;
 		this.$content = $el.find(".content");
 		this.$navTemplate = null;
 		this.$contentTemplate = null;
+		this.$profiles = null;
 		//init plugin
 		this.init();
 	};
 	
 	ProfileBrowser.prototype = {
 		init:function(){
+			//get the templates ready to use
 			this.$navTemplate = $("#navTemp");
 			this.$contentTemplate = $("#contentTemp");
+			//load data (ajax/js object)
 			this.fetchData();
 		},
 		fetchData:function(){
@@ -43,6 +47,8 @@
 				},
 				error:function(){
 					//if ajax is failed, we have to load data from javascript
+					//chrome doesn't allow ajax calls to file system, so we have to get data from javascript
+					//this 'data' is a global var 
                     self.renderHtml(data);
 				}
 			}).done(function() {
@@ -55,29 +61,33 @@
 			this.$nav.html(_.template(self.$navTemplate.html(),{items:data.data}));
 			//render the page body
 			this.$content.html(_.template(self.$contentTemplate.html(),{items:data.data}));
-            //binding
+            //binding actions to buttons
             this.binding();
 		},
 		binding:function(){
             //bind click for desk top
+			//cache DOMs
             var self = this;
-			this.$nav.find("li").click(function(evt){
-                evt.preventDefault();
+            self.$navBtns = this.$nav.find("li");
+            self.$profiles = self.$content.find(".profile");    
+			self.$navBtns.click(function(evt){
+				evt.preventDefault();
+				//added active class to clicked button
+				self.$navBtns.removeClass("active");
+				$(this).addClass("active");
+				//find the right profile to show
                 var index = $(this).index();
-                var profiles = self.$content.find(".profile");
-                var target = profiles.eq(index);
-                profiles.hide();
-                profiles.eq(index).fadeIn(200);
+                self.$profiles.hide();
+                self.$profiles.eq(index).fadeIn(200);
             });
             //bind click for mobile
             this.$content.find(".profileLabel").click(function(evt){
                 evt.preventDefault();
-                self.$content.find(".profile").slideUp(200);
-
+                self.$profiles.slideUp(200);
                 $(this).next(".profile").slideDown(200);
             })
 
-            //kick off the app
+            //kick off the app by click on the first item
             this.$nav.find("li:first").trigger("click");
 		}
 	};

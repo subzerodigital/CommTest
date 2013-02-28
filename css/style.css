@@ -56,7 +56,8 @@ h1, h2, h3, h4, h5, h6, p, span, strong, a, ul, li, div {
 
 h1 {
   font-size: 3.5em;
-  font-weight: bold; }
+  font-weight: bold;
+  line-height: 1.5em; }
 
 h2 {
   font-size: 2.215em;
@@ -97,7 +98,9 @@ a:link, a:visited, a:active {
     border-bottom: 1px solid #999999; }
     .nav li a {
       display: block;
-      padding: 3px 15px; }
+      padding: 3px 15px;
+      font-size: 1.1em;
+      font-weight: bold; }
     .nav li:last-child {
       border-bottom: none; }
 
@@ -123,6 +126,8 @@ a:link, a:visited, a:active {
       .bodyWrapper .content .profile img {
         float: left;
         margin: 0 20px 20px 0; }
+      .bodyWrapper .content .profile p {
+        font-size: 1.4em; }
     .bodyWrapper .content .profileLabel {
       display: none; }
 
