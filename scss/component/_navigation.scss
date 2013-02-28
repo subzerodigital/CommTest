@@ -1,49 +1,48 @@
-.nav{
+.nav {
 
-    float:left;
-    width: 27%;
-    border:1px solid $grey;
-    border-right: none;
-    @include rounded(10px,0, 0, 10px);
-    z-index: 99;
-    margin-top: 20px;
+  float: left;
+  width: 27%;
+  border: 1px solid $grey;
+  border-right: none;
+  @include rounded(10px, 0, 0, 10px);
+  z-index: 99;
+  margin-top: 20px;
 
-    li {
-        @include gradient($navBtnTop,$navBtnBottom);
-        border-bottom: 1px solid $grey;
+  li {
+    @include gradient($navBtnTop, $navBtnBottom);
+    border-bottom: 1px solid $grey;
 
-        a {
-          display: block;
-          padding:3px 15px;
-          font-size:1.1em;
-          outline: none;
+    a {
+      display: block;
+      padding: 3px 15px;
+      font-size: 1.1em;
+      outline: none;
 
-        }
-        &:last-child{
-            border-bottom: none;
-          @include rounded(0,0, 0, 10px);
-        }
-
-        &:first-child{
-          @include rounded(10px,0, 0, 0);
-        }
-
-        &.active{
-            background: $white;
-            position: relative;
-            right:-1px;
-            z-index: 1000;
-            border-right:2px solid $white;
-            a {
-              font-weight:bold;
-            }
-        }
     }
+    &:last-child {
+      border-bottom: none;
+      @include rounded(0, 0, 0, 10px);
+    }
+
+    &:first-child {
+      @include rounded(10px, 0, 0, 0);
+    }
+
+    &.active {
+      background: $white;
+      position: relative;
+      right: -1px;
+      z-index: 1000;
+      border-right: 2px solid $white;
+      a {
+        font-weight: bold;
+      }
+    }
+  }
 }
 
-
 @media all and (max-width: $breakingPoint) {
-  .nav{
+  .nav {
     display: none;
   }
 }

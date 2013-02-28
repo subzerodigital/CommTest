@@ -1,59 +1,61 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <meta http-equiv="Content-Language" content="en" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Language" content="en"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Profile Browser</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
 </head>
 
 <body>
-	<div class="bodyWrapper fn-profileBrowser">
-            <h1>Profile Browser</h1>
+<div class="bodyWrapper fn-profileBrowser">
+    <h1>Profile Browser</h1>
 
-			<ul class="nav">
-				<!-- navigation will be populated via underscore template engine -->
-			</ul>
-			<div class="content">
-				<!-- content will be populated  -->
-			</div>
+    <ul class="nav">
+        <!-- navigation will be populated via underscore template engine -->
+    </ul>
+    <div class="content">
+        <!-- content will be populated  -->
+    </div>
 
-	</div>
-	
-	<!-- template to render the navigation -->
-	<script type="text/html" id='navTemp'>
-        <% _.each(items,function(item){ %>
-            <li><a href="#"><%= item.firstName %> <%= item.lastName %></a></li>
-        <% }); %>	
-	</script>
-	
-	<!-- template to render the page content-->
-	<script type="text/html" id='contentTemp'>
-        <% _.each(items,function(item){ %>
-            <div class="profileLabel"><h2><%= item.firstName %> <%= item.lastName %></h2></div>
-            <div class='profile'>
-                <div class="detail">
-                    <img src="<%= item.picture %>" alt="<%= item.firstName %> <%= item.lastName %>" />
-                    <h3><%= item.firstName %> <%= item.lastName %></h3>
-                    <p><%- item.bio %></p>
-                </div>
-			</div>
-        <% }); %>
-	</script>
-	
-	<!-- jQuery -->
-	<script type="text/javascript" src="js/lib/vendor/jquery-1.9.0.js"></script>
-    <!--include mockData: Chrome doesn't allow ajax call to local file system, so I have to include the data here - in case ajax call fails-->
-    <script type="text/javascript" src="data/data.js"></script>
-	<!-- vendor -->
-	<script type="text/javascript" src="js/lib/vendor/underscore.js"></script>	
-	<!-- native lib -->
-	<script type="text/javascript" src="js/lib/profileBrowser.js"></script>
-	<!-- app init -->
-	<script type="text/javascript" src="js/appInit.js"></script>
-	
+</div>
+
+<!-- template to render the navigation -->
+<script type="text/html" id='navTemp'>
+    <% _.each(items,function(item){ %>
+    <li><a href="#"><%= item.firstName %> <%= item.lastName %></a></li>
+    <% }); %>
+</script>
+
+<!-- template to render the page content-->
+<script type="text/html" id='contentTemp'>
+    <% _.each(items,function(item){ %>
+    <div class="profileLabel">
+        <h2><%= item.firstName %> <%= item.lastName %></h2>
+    </div>
+    <div class='profile'>
+        <div class="detail">
+            <img src="<%= item.picture %>" alt="<%= item.firstName %> <%= item.lastName %>"/>
+            <h3><%= item.firstName %> <%= item.lastName %></h3>
+            <p><%- item.bio %></p>
+        </div>
+    </div>
+    <% }); %>
+</script>
+
+<!-- jQuery -->
+<script type="text/javascript" src="js/lib/vendor/jquery-1.9.0.js"></script>
+<!--include mockData: Chrome doesn't allow ajax call to local file system, so I have to include the data here - in case ajax call fails-->
+<script type="text/javascript" src="data/data.js"></script>
+<!-- vendor -->
+<script type="text/javascript" src="js/lib/vendor/underscore.js"></script>
+<!-- native lib -->
+<script type="text/javascript" src="js/lib/profileBrowser.js"></script>
+<!-- app init -->
+<script type="text/javascript" src="js/appInit.js"></script>
+
 </body>
 </html>

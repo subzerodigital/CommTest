@@ -1,3 +1,4 @@
-$(function(){
-	$(".fn-profileBrowser").profileBrowser();
+//on page load, start the app.
+$(function () {
+    $(".fn-profileBrowser").profileBrowser();
 });
