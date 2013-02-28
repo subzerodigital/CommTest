@@ -1,7 +1,7 @@
 .nav{
 
     float:left;
-    width: 25%;
+    width: 27%;
     border:1px solid $grey;
     border-right: none;
     @include rounded(10px,0, 0, 10px);
@@ -16,7 +16,7 @@
           display: block;
           padding:3px 15px;
           font-size:1.1em;
-          font-weight:bold;
+
         }
         &:last-child{
             border-bottom: none;
@@ -33,6 +33,9 @@
             right:-1px;
             z-index: 1000;
             border-right:2px solid $white;
+            a {
+              font-weight:bold;
+            }
         }
     }
 }
