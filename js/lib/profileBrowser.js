@@ -1,9 +1,9 @@
 /***************************************************
- * jQuery plug-in to enable starProfile web app 
+ * jQuery plug-in to enable Profile Browser web app
  * 
  * dependency: jQuery , underscore
  * binding class: fn-starProfile
- * Author: Yinan Yang
+ * Author: Yinan Yang , subzerodigital@gmail.com
  ***************************************************/
 
 (function(window,undefined){
@@ -74,10 +74,9 @@
             self.$profiles = self.$content.find(".profile");
             self.$profileLabels = self.$content.find(".profileLabel");
 
+            //bind click for desktop
 			self.$navBtns.click(function(evt){
 				evt.preventDefault();
-				//added active class to clicked button
-                //find the right profile to show
                 var index = $(this).index();
 
                 if(!self.$profiles.eq(index).is(":visible")){
@@ -99,7 +98,7 @@
                 }
             });
 
-            //kick off the app by click on the first item
+            //kick off the app by clicking on the first item
             this.$nav.find("li:first").trigger("click");
 		},
         updateIndex:function(index){

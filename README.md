@@ -2,7 +2,7 @@ Release note / feature list:
 
 1. Due to limited time frame, prototype only tested in IE8+/Firefox/Chrome/Safari/Opera.
 2. Responsive design adopted -resize your browser to see the mobile experience, breaking point set to 680px.
-3. jQuery and underscore.js template engine are used to render html.
+3. jQuery and underscore.js template engine are used.
 4. Converted data.js to data.json for Ajax load.
 5. Inline javascript found in data.js, escaped by using underscore template 
 
