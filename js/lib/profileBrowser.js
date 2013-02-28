@@ -49,7 +49,8 @@
 				error:function(){
 					//if ajax is failed, we have to load data from javascript
 					//chrome doesn't allow ajax calls to file system, so we have to get data from javascript
-					//this 'data' is a global var 
+					//this 'data' is a global var
+                    data.data = data;
                     self.renderHtml(data);
 				}
 			}).done(function() {
