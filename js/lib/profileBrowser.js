@@ -23,6 +23,7 @@
 		this.$navTemplate = null;
 		this.$contentTemplate = null;
 		this.$profiles = null;
+        this.$profileLabels = null;
 		//init plugin
 		this.init();
 	};
@@ -69,27 +70,37 @@
 			//cache DOMs
             var self = this;
             self.$navBtns = this.$nav.find("li");
-            self.$profiles = self.$content.find(".profile");    
+            self.$profiles = self.$content.find(".profile");
+            self.$profileLabels = self.$content.find(".profileLabel");
+
 			self.$navBtns.click(function(evt){
 				evt.preventDefault();
 				//added active class to clicked button
-				self.$navBtns.removeClass("active");
-				$(this).addClass("active");
-				//find the right profile to show
+                //find the right profile to show
                 var index = $(this).index();
+				self.updateIndex(index);
+
                 self.$profiles.hide();
                 self.$profiles.eq(index).fadeIn(200);
             });
             //bind click for mobile
-            this.$content.find(".profileLabel").click(function(evt){
+            self.$profileLabels.click(function(evt){
+                //find out the index of item
                 evt.preventDefault();
+                var index = $.inArray(this,self.$profileLabels);
+                self.updateIndex(index);
                 self.$profiles.slideUp(200);
                 $(this).next(".profile").slideDown(200);
-            })
+            });
 
             //kick off the app by click on the first item
             this.$nav.find("li:first").trigger("click");
-		}
+		},
+        updateIndex:function(index){
+            this.$navBtns.removeClass("active").eq(index).addClass("active");
+            this.$profileLabels.removeClass("active").eq(index).addClass("active");
+
+        }
 	};
 	
 	//register plug-in to jQuery and bind to to data for debugging

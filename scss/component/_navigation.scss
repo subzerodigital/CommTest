@@ -5,7 +5,8 @@
     border:1px solid $grey;
     border-right: none;
     @include rounded(10px,0, 0, 10px);
-    overflow: hidden;
+    z-index: 99;
+    margin-top: 20px;
 
     li {
         @include gradient($navBtnTop,$navBtnBottom);
@@ -19,6 +20,19 @@
         }
         &:last-child{
             border-bottom: none;
+          @include rounded(0,0, 0, 10px);
+        }
+
+        &:first-child{
+          @include rounded(10px,0, 0, 0);
+        }
+
+        &.active{
+            background: $white;
+            position: relative;
+            right:-1px;
+            z-index: 1000;
+            border-right:2px solid $white;
         }
     }
 }

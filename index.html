@@ -35,9 +35,9 @@
         <% _.each(items,function(item){ %>
             <div class="profileLabel"><h2><%= item.firstName %> <%= item.lastName %></h2></div>
             <div class='profile'>
-                <h3><%= item.firstName %> <%= item.lastName %></h3>
                 <div class="detail">
                     <img src="<%= item.picture %>" alt="<%= item.firstName %> <%= item.lastName %>" />
+                    <h3><%= item.firstName %> <%= item.lastName %></h3>
                     <p><%- item.bio %></p>
                 </div>
 			</div>
