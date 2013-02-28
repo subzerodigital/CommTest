@@ -79,19 +79,24 @@
 				//added active class to clicked button
                 //find the right profile to show
                 var index = $(this).index();
-				self.updateIndex(index);
 
-                self.$profiles.hide();
-                self.$profiles.eq(index).fadeIn(200);
+                if(!self.$profiles.eq(index).is(":visible")){
+				    self.updateIndex(index);
+                    self.$profiles.hide();
+                    self.$profiles.eq(index).fadeIn(200);
+                }
             });
             //bind click for mobile
             self.$profileLabels.click(function(evt){
                 //find out the index of item
                 evt.preventDefault();
                 var index = $.inArray(this,self.$profileLabels);
-                self.updateIndex(index);
-                self.$profiles.slideUp(200);
-                $(this).next(".profile").slideDown(200);
+                var $target = $(this).next(".profile")
+                if(!$target.is(":visible")){
+                    self.updateIndex(index);
+                    self.$profiles.slideUp(200);
+                    $target.slideDown(200);
+                }
             });
 
             //kick off the app by click on the first item

@@ -91,9 +91,11 @@ a:link, a:visited, a:active {
   margin-top: 20px; }
   .nav li {
     background-color: #cdcdcd;
+    /*
     -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FFDCDCDC', endColorstr='#FFCDCDCD');";
-    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FFDCDCDC', endColorstr='#FFCDCDCD');
+    filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FFDCDCDC', endColorstr='#FFCDCDCD');;
     zoom: 1;
+    */
     background: -webkit-gradient(linear, left top, left bottom, from(gainsboro), to(#cdcdcd));
     background: -moz-linear-gradient(top, gainsboro, #cdcdcd);
     background: -o-linear-gradient(gainsboro, #cdcdcd);
@@ -102,7 +104,8 @@ a:link, a:visited, a:active {
     .nav li a {
       display: block;
       padding: 3px 15px;
-      font-size: 1.1em; }
+      font-size: 1.1em;
+      outline: none; }
     .nav li:last-child {
       border-bottom: none;
       border-radius: 0 0 0 10px;
@@ -121,7 +124,7 @@ a:link, a:visited, a:active {
       .nav li.active a {
         font-weight: bold; }
 
-@media all and (max-width: 1500px) {
+@media all and (max-width: 680px) {
   .nav {
     display: none; } }
 .bodyWrapper {
@@ -139,7 +142,8 @@ a:link, a:visited, a:active {
     border-left: 1px solid #999999;
     padding: 5px 0 20px 20px; }
     .bodyWrapper .content .profile {
-      overflow: hidden; }
+      overflow: hidden;
+      display: none; }
       .bodyWrapper .content .profile img {
         float: left;
         margin: 5px 15px 5px 5px;
@@ -154,7 +158,7 @@ a:link, a:visited, a:active {
     .bodyWrapper .content .profileLabel {
       display: none; }
 
-@media all and (max-width: 1500px) {
+@media all and (max-width: 680px) {
   .bodyWrapper {
     width: 100%;
     margin: 0; }
@@ -167,9 +171,11 @@ a:link, a:visited, a:active {
         display: block; }
         .bodyWrapper .content .profileLabel h2 {
           background-color: #cdcdcd;
+          /*
           -ms-filter: "progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FFDCDCDC', endColorstr='#FFCDCDCD');";
-          filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FFDCDCDC', endColorstr='#FFCDCDCD');
+          filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#FFDCDCDC', endColorstr='#FFCDCDCD');;
           zoom: 1;
+          */
           background: -webkit-gradient(linear, left top, left bottom, from(gainsboro), to(#cdcdcd));
           background: -moz-linear-gradient(top, gainsboro, #cdcdcd);
           background: -o-linear-gradient(gainsboro, #cdcdcd);
